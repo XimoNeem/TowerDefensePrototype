@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class EnemyBehaviour : ScriptableObject, IEnemy
+public class TrooperBehaviour : ScriptableObject, ITrooper
 {
-    public void Attack()
+    public void Deffend()
     {
         throw new System.NotImplementedException();
     }
