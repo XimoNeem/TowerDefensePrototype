@@ -1,0 +1,4 @@
+interface IUIItem
+{
+    void SetValue();
+}
