@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class LobbyButtonHelper : MonoBehaviour
+public class UIItem_LobbyButton : MonoBehaviour, IUIItem
 {
     [SerializeField] private LobbyItemType _type;
     private Button _button;
@@ -20,11 +20,17 @@ public class LobbyButtonHelper : MonoBehaviour
     private void Click()
     {
         FindObjectOfType<LobbyContext>().NavigateToLobbyItem(_type);
+        FindObjectOfType<LobbyUIController>().SetNewContent(_type);
 
-        foreach (var item in FindObjectsOfType<LobbyButtonHelper>())
+        foreach (var item in FindObjectsOfType<UIItem_LobbyButton>())
         {
             item.GetComponent<Button>().targetGraphic.color = _deselectedColor;
         }
         _button.targetGraphic.color = _selectedColor;
+    }
+
+    public void SetValue()
+    {
+        throw new System.NotImplementedException();
     }
 }

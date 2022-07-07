@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LobbyUIController : UIController
+public class Mine : Building
 {
-    
+    public override void Click()
+    {
+
+    }
 }
